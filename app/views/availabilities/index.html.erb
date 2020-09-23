@@ -1,9 +1,9 @@
 <h1>Availabilities</h1>
 
-<% @availabilities.each do |availability|  %>
+<% @availabilities.where(scheduled: false).each do |availability|  %>
   <p><%= availability.date %>: <%= availability.time %></p>
   <%= link_to "Details", availability_path(availability)  %>
   <%= link_to "Delete", availability_path(availability), method: :delete  %>
-  <%= link_to "Set-up a meeting", new_meeting_path  %>
+  <%= link_to "Set-up a meeting", { action: 'new', controller: 'meetings', availability_id: availability }  %>
 <% end%>
 
