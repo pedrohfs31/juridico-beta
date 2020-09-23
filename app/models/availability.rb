@@ -3,4 +3,5 @@ class Availability < ApplicationRecord
   has_one :meeting
 
   validates :date, :time, :user, presence: true
+
 end

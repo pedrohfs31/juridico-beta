@@ -3,7 +3,9 @@
 
 <%= link_to "Create Availability", new_availability_path  %>
 <br>
-<%= link_to "Sign up", new_availability_path  %>
-<br>
 <%= link_to "Set-up a Meeting", availabilities_path  %>
+<br>
+<%= link_to "Sign up", new_user_registration_path  %>
+<br>
+<%= link_to "Logout", destroy_user_session_path, method: :delete  %>
 

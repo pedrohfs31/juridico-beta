@@ -3,7 +3,7 @@
 
 <%= simple_form_for @availability do |f| %>
   <%= f.input :date %>
-  <%= f.input :time, as: :select, collection: @times %>
+  <%= f.input :time, as: :select, collection: @times.values %>
   <%= f.button :submit, class: 'btn btn-primary' %>
 
 <% end %>

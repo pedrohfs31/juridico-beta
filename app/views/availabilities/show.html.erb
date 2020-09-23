@@ -1,0 +1,8 @@
+
+
+<h1><%= @availability.user.email %></h1>
+<h1><%= @availability.date %></h1>
+<h1><%= @availability.time.strftime('%k:%M') %></h1>
+
+
+<%= link_to "Availabilities" , availabilities_path %>
