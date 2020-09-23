@@ -4,5 +4,6 @@
   <p><%= availability.date %>: <%= availability.time %></p>
   <%= link_to "Details", availability_path(availability)  %>
   <%= link_to "Delete", availability_path(availability), method: :delete  %>
+  <%= link_to "Set-up a meeting", new_meeting_path  %>
 <% end%>
 
