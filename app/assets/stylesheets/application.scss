@@ -12,3 +12,163 @@
 @import "components/index";
 @import "pages/index";
 // @import "simple_calendar";
+
+// O código de estilo do front está ainda todos neste arquivo e em CSS e não
+ // SCSS para agilizar a fase de testes.
+
+// Variáveis de cor provisória criadas para o projeto todo
+// Variables in SCSS: https://sass-lang.com/documentation/variables
+$dark-color: #41444b;
+$med-color: #52575d;
+$happy-color: #fddb3a;
+$neutral-color: #f6f4e6;
+
+nav ul {
+  background-color: $dark-color;
+  list-style-type: none;
+  margin: 0;
+  padding: 12px 0px;
+  overflow: hidden;
+}
+
+nav ul li {
+  display: inline;
+}
+nav ul li i {
+  color: $neutral-color;
+  font-size: 20px;
+  text-align: center;
+  padding: 16px 0px 16px 50px;
+  text-decoration: none;
+}
+
+nav ul li a {
+  color: $neutral-color;
+  font-size: 20px;
+  text-align: center;
+  padding: 16px 16px 16px 0px;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+  color: $happy-color;
+  font-style: bold;
+  font-size: 22px;
+  transition-delay: 250ms;
+  transition: 800ms;
+}
+
+#right-align {
+  float: right;
+  color: $neutral-color;
+  font-size: 20px;
+  text-align: center;
+  padding: 16px 16px 16px 0px;
+  text-decoration: none;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 8px;
+  line-height: 70%;
+}
+@media (max-width: 960px){
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4px;
+}
+}
+@media (max-width: 576px){
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+}
+}
+
+.card {
+  position: relative;
+}
+// https://css-tricks.com/block-links-are-a-pain-and-maybe-just-a-bad-idea/
+.card p a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card:hover {
+  background-color: $happy-color;
+  transition-delay: 250ms;
+  transition: 800ms;
+  transform: scale(1.1, 1.1);
+}
+
+.a-card {
+  line-height: 30px;
+  color: $dark-color;
+  background-color: $happy-color;
+  font-size: 16px;
+  padding: 10px 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 2px solid $dark-color
+}
+
+.a-card:hover {
+  text-decoration: none;
+  color: $neutral-color;
+  background-color: $dark-color;
+}
+
+footer {
+  margin-top: 30px;
+}
+
+footer ul {
+  display: block;
+  margin-top: 50px;
+  background-color: $dark-color;
+  color: $neutral-color;
+  list-style-type: none;
+  line-height: 50%;
+  margin: 0;
+  padding: 10px 0px;
+  overflow: hidden;
+  text-align: center
+}
+
+footer ul h6 {
+  font-size: 15px;
+}
+
+footer ul p {
+  font-size: 12px;
+}
+
+footer ul li {
+  display: inline;
+}
+
+footer ul li i {
+  color: $neutral-color;
+  font-size: 30px;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  text-decoration: none;
+}
+
+footer ul li:hover {
+  text-decoration: none;
+  color: $happy-color;
+  font-style: bold;
+  font-size: 22px;
+  transition-delay: 250ms;
+  transition: 800ms;
+}
