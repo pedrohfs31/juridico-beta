@@ -94,14 +94,14 @@ nav ul li a:hover {
   position: relative;
 }
 // https://css-tricks.com/block-links-are-a-pain-and-maybe-just-a-bad-idea/
-.card p a::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+// .card p a::after {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+// }
 
 .card:hover {
   background-color: $happy-color;
@@ -125,6 +125,10 @@ nav ul li a:hover {
   text-decoration: none;
   color: $neutral-color;
   background-color: $dark-color;
+}
+
+.form {
+
 }
 
 footer {
