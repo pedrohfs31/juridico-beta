@@ -1,10 +1,44 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-<%= link_to "Create Availability", new_availability_path  %>
-<br>
-<%= link_to "Set-up a Meeting", availabilities_path  %>
-<br>
-<%= link_to "Sign up", new_user_registration_path  %>
-<br>
-<%= link_to "Logout", destroy_user_session_path, method: :delete  %>
+
+
+<div class="main">
+  <div class="container mt-5 pt-5">
+    <div class="w-50 mx-auto py-3 px-4">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="cards">
+            <div class="card" style="width: 15rem;">
+              <div class="card-body home">
+                <h5 class="card-title"> Create Availability </h5>
+                <ul class="icons-inline">
+                  <li>
+                    <%= link_to new_availability_path do %>
+                      <i class="fas fa-calendar-check"> Create</i>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card" style="width: 15rem;">
+              <div class="card-body home">
+                <h5 class="card-title"> Set-up a Meeting </h5>
+                <ul class="icons-inline">
+                  <li>
+                    <%= link_to availabilities_path do %>
+                      <i class="fas fa-calendar-check"> Set-up</i>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<%#= link_to "Logout", destroy_user_session_path, method: :delete  %>
+<%#= link_to "Sign up", new_user_registration_path  %>
