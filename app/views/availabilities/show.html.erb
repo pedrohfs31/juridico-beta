@@ -29,7 +29,7 @@
         <div class="card" style="width: 100%;">
           <div class="card-body">
             <h3 class="card-title">Avaliability</h5>
-            <h5 class="card-title"><%= @availability.date %></h5>
+            <h5 class="card-title"><%= @availability.date.strftime("%a, %B %d %Y") %></h5>
             <p class="card-text"><%= @availability.time.strftime('%k:%M') %></p>
             <p class="card-text">20 minutos de duração</p>
             <p class="card-text"><%= @availability.user.email %></p>
