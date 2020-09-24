@@ -1,3 +1,4 @@
+<!-- https://www.w3schools.com/css/css_navbar.asp -->
 <nav>
   <ul>
     <li>
@@ -31,10 +32,10 @@
             <h3 class="card-title">Avaliability</h5>
             <h5 class="card-title"><%= @availability.date %></h5>
             <p class="card-text"><%= @availability.time.strftime('%k:%M') %></p>
-            <p class="card-text">20 minutos de duração</p>
+            <p class="card-text">20 minutes long</p>
             <p class="card-text"><%= @availability.user.email %></p>
             <p class="card-text"><%= link_to "Delete", availability_path(@availability), method: :delete  %></p>
-            <p><%= link_to "Set-up Meeting", { action: 'new', controller: 'meetings', availability_id: @availability }, class: "a-card"  %></p>
+            <p><%= link_to "Schedule Meeting", { action: 'new', controller: 'meetings', availability_id: @availability }, class: "a-card"  %></p>
           </div>
         </div>
       </div>
@@ -42,13 +43,8 @@
  </div>
 </div>
 
-
-<%= link_to "Availabilities" , availabilities_path %>
-
 <footer>
   <ul>
-    <h6><strong>Advocacia-Geral da União</strong></p>
-    <p>Ed. Sede I - Setor de Autarquias Sul - Quadra 3 - Lote 5/6, Ed. Multi Brasil Corporate - Brasília-DF - CEP 70.070-030 - Fones: (61) 2026-9202 e 2026-9712</p>
     <li>
       <i class="fas fa-globe-americas"></i>
     </li>
