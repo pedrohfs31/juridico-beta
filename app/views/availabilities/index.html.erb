@@ -1,8 +1,4 @@
-<html>
-  <head>
-  </head>
 
-  <body>
     <!-- https://www.w3schools.com/css/css_navbar.asp -->
     <nav>
       <ul>
@@ -27,6 +23,13 @@
         </li>
       </ul>
     </nav>
+
+<% @availabilities.where(scheduled: false).each do |availability|  %>
+  <p><%= availability.date %>: <%= availability.time %></p>
+  <%= link_to "Details", availability_path(availability)  %>
+  <%= link_to "Delete", availability_path(availability), method: :delete  %>
+  <%= link_to "Set-up a meeting", { action: 'new', controller: 'meetings', availability_id: availability }  %>
+<% end%>
 
     <br>
 
@@ -115,6 +118,4 @@
         </li>
       </ul>
     </footer>
-  </body>
 
-</html>

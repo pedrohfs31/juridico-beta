@@ -57,6 +57,7 @@ class AvailabilitiesController < ApplicationController
 
   def set_availability
     @availability = Availability.find(params[:id])
+
   end
 
   def availability_params
