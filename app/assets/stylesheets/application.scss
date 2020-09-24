@@ -110,6 +110,7 @@ nav ul li a:hover {
   transition-delay: 250ms;
   transition: 800ms;
   transform: scale(1.1, 1.1);
+  cursor: pointer;
 }
 
 .a-card {
@@ -129,12 +130,22 @@ nav ul li a:hover {
   background-color: $dark-color;
 }
 
+
+.card-body.home{
+  text-align: center;
+
+}
+
 .form {
 
 }
 
 footer {
-  margin-top: 30px;
+  // margin-top: 30px;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  width: 100vw;
 }
 
 footer ul {
@@ -179,21 +190,34 @@ footer ul li:hover {
   transition: 800ms;
 }
 
+<<<<<<< HEAD
 ul {
   padding-inline-start: 0;
 }
 
+=======
+
+ul {
+  padding-inline-start: 0;
+}
+>>>>>>> 0bdf53bc9ac174f56982215835e5e69c97cf78a4
 .icons-inline {
   display: flex;
   justify-content: center;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0bdf53bc9ac174f56982215835e5e69c97cf78a4
 .icons-inline li {
   display: inline;
   text-align: justify;
   padding: 4px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0bdf53bc9ac174f56982215835e5e69c97cf78a4
 .icons-inline i {
   color: $dark-color;
   font-size: 20px;
