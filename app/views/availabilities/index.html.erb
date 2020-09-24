@@ -32,11 +32,21 @@
     <% @availabilities.where(scheduled: false).each do |availability|  %>
       <div class="card" style="width: 15rem;">
         <div class="card-body">
-          <h5 class="card-title"><%= availability.date.strftime("%a, %B %d %Y") %></h5>
-          <p class="card-text"><%= availability.time.strftime('%k:%M') %></p>
+          <h6 class="card-title"><strong><%= availability.date.strftime("%A, %d %b %Y") %></strong></h6>
+          <p class="card-text"><%= availability.time.strftime('%k:%M %P') %></p>
           <p class="card-text">20 minutes long</p>
-          <p class="card-text"><%= link_to "Details", availability_path(availability) %></p>
-          <p class="card-text"><%= link_to "Delete", availability_path(availability), method: :delete  %></p>
+          <ul class="icons-inline">
+            <li class="text-center">
+              <%= link_to(availability_path(availability)) do %>
+                <i class="fas fa-info-circle"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to availability_path(availability), method: :delete, data: { confirm: 'Are you sure?' }, class: 'user' do %>
+                 <i class="fa fa-trash-alt"></i>
+              <% end %>
+            </li>
+          </ul>
           <p><%= link_to "Set-up Meeting", { action: 'new', controller: 'meetings', availability_id: availability }, class: "a-card"  %></p>
         </div>
       </div>

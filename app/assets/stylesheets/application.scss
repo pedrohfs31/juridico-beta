@@ -1,4 +1,5 @@
 // Graphical variables
+
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
@@ -22,6 +23,7 @@ $dark-color: #41444b;
 $med-color: #52575d;
 $happy-color: #fddb3a;
 $neutral-color: #f6f4e6;
+
 
 nav ul {
   background-color: $dark-color;
@@ -175,4 +177,28 @@ footer ul li:hover {
   font-size: 22px;
   transition-delay: 250ms;
   transition: 800ms;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+.icons-inline {
+  display: flex;
+  justify-content: center;
+}
+
+.icons-inline li {
+  display: inline;
+  text-align: justify;
+  padding: 4px;
+}
+
+.icons-inline i {
+  color: $dark-color;
+  font-size: 20px;
+  text-align: center;
+  padding: 0;
+  // padding: 5px 5px 5px 5px;
+  text-decoration: none;
 }
