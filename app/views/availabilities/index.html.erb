@@ -32,7 +32,7 @@
     <% @availabilities.where(scheduled: false).each do |availability|  %>
       <div class="card" style="width: 15rem;">
         <div class="card-body">
-          <h5 class="card-title"><%= DateTime.iso8601("#{availability.date}").to_date %></h5>
+          <h5 class="card-title"><%= availability.date.strftime("%a, %B %d %Y") %></h5>
           <p class="card-text"><%= availability.time.strftime('%k:%M') %></p>
           <p class="card-text">20 minutes long</p>
           <p class="card-text"><%= link_to "Details", availability_path(availability) %></p>
