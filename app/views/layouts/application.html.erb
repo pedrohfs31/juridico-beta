@@ -34,9 +34,15 @@
         <li>
             <%#= link_to "Help", root_path, class: "a-nav"  %>
         </li>
-        <li id="right-align">
-            <%= current_user.email  %>
-        </li>
+        <% if user_signed_in? %>
+          <li id="right-align">
+              <%= current_user.email %>
+          </li>
+        <% else %>
+          <li id="right-align">
+            <%= link_to "Login", new_user_session_path %>
+          </li>
+        <% end %>
       </ul>
     </nav>
 
