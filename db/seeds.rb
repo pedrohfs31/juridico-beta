@@ -6,13 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-<<<<<<< HEAD
-require "faker"
-
-12.times do
-  
-end
-=======
 
 require 'faker'
 
@@ -38,4 +31,3 @@ puts "Creating availabilities ...."
     scheduled: false
   )
 end
->>>>>>> 0bdf53bc9ac174f56982215835e5e69c97cf78a4
