@@ -36,9 +36,19 @@
         </li>
         <% if user_signed_in? %>
           <li id="right-align">
-              <%= current_user.email %>
+            <div class="dropdown">
+              <span><%= current_user.email %></span>
+              <div class="dropdown-content">
+                <%= link_to "Edit profile", edit_user_registration_path %>
+                <%= link_to "Change password", edit_user_registration_path %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+              </div>
+            </div>
           </li>
-        <% else %>
+          <% else %>
+          <li id="right-align">
+            <%= link_to "Signup", new_user_registration_path %>
+          </li>
           <li id="right-align">
             <%= link_to "Login", new_user_session_path %>
           </li>
