@@ -1,0 +1,22 @@
+.hide {
+  display: none;
+}
+
+.cart-container {
+  width: 1005px;
+  margin-bottom: 15px;
+  background-color: gainsboro;
+  box-shadow: 0 0 3px rgba($color: #858585, $alpha: 0.3);
+}
+
+.cart-item {
+  padding: 0 15px;
+}
+
+#cart-header {
+  padding: 15px;
+}
+
+.item-info {
+  margin: 0 5px;
+}

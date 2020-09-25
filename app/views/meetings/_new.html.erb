@@ -1,0 +1,13 @@
+<div class="cart-item">
+  <div class="item-info d-flex justify-content-between">
+    <h6><%= "#{Availability.find(params[:availability_id]).time.strftime('%k:%M %P')} - #{Availability.find(params[:availability_id]).date.strftime("%A, %d %b %Y")}" %></h6>
+    <%= link_to "#", class: 'remove-selected-date' do %>
+      <i class="fa fa-trash-alt"></i>
+    <% end %>
+  </div>
+  <%= simple_form_for "meeting#{params[:availability_id]}" do |f| %>
+    <%= f.input :subject, label: false, input_html: {placeholder: "Add meeting subject"} %>
+    <%= f.input :availability_id, as: :hidden, input_html: {value: params[:availability_id], include_hidden: true}  %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <% end %>
+</div>

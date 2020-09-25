@@ -81,18 +81,24 @@ nav ul li a:hover {
   line-height: 70%;
 }
 @media (max-width: 960px){
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 15px;
-}
+  .cart-container {
+    width: 750px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+  }
 }
 @media (max-width: 576px){
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 15px;
-}
+  .cart-container {
+    width: 495px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+  }
 }
 
 .card {
@@ -136,10 +142,6 @@ nav ul li a:hover {
 
 .card-body.home{
   text-align: center;
-
-}
-
-.form {
 
 }
 
