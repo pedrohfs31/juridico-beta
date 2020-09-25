@@ -16,7 +16,7 @@ $neutral-color: #f6f4e6;
 
 label {
   display: inline-block;
-  margin: 0;
+  margin-bottom: 7px;
 }
 
 input[type=text], select {
@@ -55,4 +55,14 @@ input[type=submit]:hover {
   font-style: bold;
   color: $happy-color;
   background-color: $dark-color;
+}
+
+.form-complement {
+  width: 35%;
+  line-height: 160%;
+  text-align: left;
+  margin: auto;
+  border-radius: 5px;
+  background-color: $neutral-color;
+  padding: 10px 20px 0px 20px;  width: 35%;
 }
