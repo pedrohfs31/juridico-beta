@@ -46,15 +46,15 @@
         <% @availabilities.each do |availability|  %>
         <div class="card" style="width: 15rem;">
           <div class="card-body">
-            <h5 class="card-title"><%= availability.date %></h5>
+            <h5 class="card-title"><%= Date.strptime("#{availability.date}", "%A-%B-%A") %></h5>
             <p class="card-text"><%= availability.time %></p>
             <p class="card-text"><%= current_user.email  %></p>
             <p class="card-text"><%= link_to "Details", availability_path(availability) %></p>
             <p class="card-text"><%= link_to "Delete", availability_path(availability), method: :delete  %></p>
             <p><%= link_to "Schedule Meeting", new_meeting_path, class: "a-card"  %></p>
-            <% end%>
           </div>
         </div>
+        <% end %>
 
         <div class="card" style="width: 15rem;">
           <div class="card-body">
