@@ -165,3 +165,53 @@ ul {
   // padding: 5px 5px 5px 5px;
   text-decoration: none;
 }
+
+/*flash*/
+.alert-error {
+    font-size: 30px;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: $dark-color;
+    text-align: left;
+ }
+
+.alert-alert {
+    font-size: 30px;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: $dark-color;
+    text-align: left;
+ }
+
+.alert-success {
+    font-size: 30px;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    font-size: 30px;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert {
+    font-size: 22px;
+    font-style: bold;
+    background-color: #cd0a0a;
+    border-color: #cd0a0a;
+    color: $neutral-color;
+    text-align: left;
+ }
+
+ .notice {
+    font-size: 22px;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: $dark-color;
+    text-align: left;
+ }
