@@ -1,4 +1,5 @@
 // Graphical variables
+
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
@@ -60,9 +61,9 @@ nav ul li a:hover {
   text-decoration: none;
   color: $happy-color;
   font-style: bold;
-  font-size: 22px;
+  font-size: 21px;
   transition-delay: 250ms;
-  transition: 800ms;
+  transition: 400ms;
 }
 
 #right-align {
@@ -186,15 +187,14 @@ footer ul li i {
   text-decoration: none;
 }
 
-footer ul li:hover {
+footer ul li i:hover {
   text-decoration: none;
   color: $happy-color;
-  font-style: bold;
-  font-size: 22px;
   transition-delay: 250ms;
   transition: 800ms;
+  transform: scale(1.1, 1.1);
+  cursor: pointer;
 }
-
 
 ul {
   padding-inline-start: 0;
@@ -215,4 +215,85 @@ ul {
   padding: 0;
   // padding: 5px 5px 5px 5px;
   text-decoration: none;
+}
+
+
+
+
+
+// .dropdown {
+//   position: relative;
+//   display: inline-block;
+// }
+
+// .dropdown-content {
+//   display: none;
+//   position: absolute;
+//   background-color: $happy-color;
+//   min-width: 160px;
+//   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+//   padding: 12px 16px;
+//   z-index: 1;
+// }
+
+// .dropdown:hover .dropdown-content {
+//   display: block;
+// }
+
+
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  top: 0;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  text-align: left;
+  z-index: 999;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: $dark-color;
+  padding: 6px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: $happy-color;
+  color: $dark-color;
+}
+
+#cont-reduce {
+  font-size: 15px;
+  text-align: left;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
 }
