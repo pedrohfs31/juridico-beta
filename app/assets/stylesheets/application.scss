@@ -272,7 +272,10 @@ ul {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: $neutral-color}
+.dropdown-content a:hover {
+  background-color: $happy-color;
+  color: $dark-color;
+}
 
 #cont-reduce {
   font-size: 15px;
