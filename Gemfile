@@ -33,6 +33,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'faker'
 
+gem 'faker'
 # Devise : seesions
 gem 'devise'
 

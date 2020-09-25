@@ -1,9 +1,24 @@
-<h1>New Availability</h1>
 
 
-<%= simple_form_for @availability do |f| %>
-  <%= f.input :date %>
-  <%= f.input :time, as: :select, collection: @times.values %>
-  <%= f.button :submit, class: 'btn btn-primary' %>
+<h3 class="text-center mt-2">New Availability</h3>
 
-<% end %>
+<div class="main">
+  <div class="class="container mt-5 pt-5">
+    <div class="w-50 mx-auto py-3 px-4 border">
+      <div class="d-flex justify-content-center text-center">
+        <div class="form" style="width: 100%;">
+          <%= simple_form_for @availability do |f| %>
+            <%= f.input :date %>
+            <%= f.input :time, as: :select, collection: @times.values %>
+            <%= f.button :submit, class: 'btn btn-primary' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+ </div>
+</div>
+
+
+
+
+

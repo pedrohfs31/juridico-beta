@@ -1,8 +1,54 @@
+<!-- <nav>
+  <ul>
+    <li>
+      <i class="fas fa-calendar-check" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"></i>
+      <%= link_to "Jurídico 1.0", root_path, class: "a-nav"  %>
+    </li>
+    <li>
+        <%= link_to "Home", root_path, class: "a-nav"  %>
+    </li>
+    <li>
+        <%= link_to "My availabilities", availabilities_path, class: "a-nav"  %>
+    </li>
+    <li>
+        <%= link_to "My meetings", meetings_path, class: "a-nav"  %>
+    </li>
+    <li>
+        <%= link_to "Help", root_path, class: "a-nav"  %>
+    </li>
+    <li id="right-align">
+        <%= current_user.email  %>
+    </li>
+  </ul>
+</nav> -->
+<br>
+<div class="main">
+  <div class="class="container mt-5 pt-5">
+    <div class="w-50 mx-auto py-3 px-4 border">
+      <div class="d-flex justify-content-center text-center">
+        <div class="card" style="width: 100%;">
+          <div class="card-body">
+            <h3 class="card-title">Avaliability</h3>
+            <h5 class="card-title"><%= @availability.date.strftime("%a, %B %d %Y") %></h5>
+            <p class="card-text"><%= @availability.time.strftime('%k:%M') %></p>
+            <p class="card-text">20 minutos de duração</p>
+            <p class="card-text"><%= @availability.user.email %></p>
+            <ul class="icons-inline">
+              <li>
+                <%= link_to availability_path(@availability), method: :delete, data: { confirm: 'Are you sure?' }, class: 'user' do %>
+                   <i class="fa fa-trash-alt"></i>
+                <% end %>
+              </li>
+            </ul>
+            <p><%= link_to "Set-up Meeting", { action: 'new', controller: 'meetings', availability_id: @availability }, class: "a-card"  %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+</div>
 
 
-<h1><%= @availability.user.email %></h1>
-<h1><%= @availability.date %></h1>
-<h1><%= @availability.time.strftime('%k:%M') %></h1>
+<%#= link_to "Availabilities" , availabilities_path %>
 
 
-<%= link_to "Availabilities" , availabilities_path %>

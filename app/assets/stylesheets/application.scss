@@ -94,20 +94,21 @@ nav ul li a:hover {
   position: relative;
 }
 // https://css-tricks.com/block-links-are-a-pain-and-maybe-just-a-bad-idea/
-.card p a::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+// .card p a::after {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+// }
 
 .card:hover {
   background-color: $happy-color;
   transition-delay: 250ms;
   transition: 800ms;
   transform: scale(1.1, 1.1);
+  cursor: pointer;
 }
 
 .a-card {
@@ -127,8 +128,22 @@ nav ul li a:hover {
   background-color: $dark-color;
 }
 
+
+.card-body.home{
+  text-align: center;
+
+}
+
+.form {
+
+}
+
 footer {
-  margin-top: 30px;
+  // margin-top: 30px;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  width: 100vw;
 }
 
 footer ul {
@@ -171,4 +186,26 @@ footer ul li:hover {
   font-size: 22px;
   transition-delay: 250ms;
   transition: 800ms;
+}
+
+
+ul {
+  padding-inline-start: 0;
+}
+.icons-inline {
+  display: flex;
+  justify-content: center;
+}
+.icons-inline li {
+  display: inline;
+  text-align: justify;
+  padding: 4px;
+}
+.icons-inline i {
+  color: $dark-color;
+  font-size: 20px;
+  text-align: center;
+  padding: 0;
+  // padding: 5px 5px 5px 5px;
+  text-decoration: none;
 }
