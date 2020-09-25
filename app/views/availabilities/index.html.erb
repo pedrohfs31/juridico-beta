@@ -29,7 +29,7 @@
 <br>
 <div class="d-flex justify-content-center text-center">
   <div class="cards">
-    <% @availabilities.where(scheduled: false).each do |availability|  %>
+    <% @availabilities.each do |availability| %>
       <div class="card" style="width: 15rem;">
         <div class="card-body">
           <h6 class="card-title"><strong><%= availability.date.strftime("%A, %d %b %Y") %></strong></h6>
