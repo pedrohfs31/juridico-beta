@@ -2,7 +2,15 @@ class MeetingsController < ApplicationController
   before_action :set_meeting, only: [:show, :destroy]
 
   def index
+    # @meetings = current_user.meetings
+    #
+    @meetings_manager = current_user.meetings
+    @meetings_lawyer = lawer_meetings
+    @meetings = @meetings_manager + @meetings_lawyer
   end
+
+
+
   def show
 
   end
@@ -28,6 +36,16 @@ class MeetingsController < ApplicationController
 
   end
 
+   def destroy
+    @meeting = Meeting.find(params[:id])
+    # @availability = @meeting.availability
+    @meeting.destroy
+
+    # redirect_to availability_path(@availability)
+    scheduled_false
+    redirect_to meetings_path
+  end
+
   private
 
   def set_meeting
@@ -36,5 +54,23 @@ class MeetingsController < ApplicationController
 
   def meeting_params
     params.require(:meeting).permit(:subject, :availability_id)
+  end
+
+
+  def scheduled_false
+
+    if current_user == @meeting.availability.user
+      @meeting.availability.destroy
+    else
+      @meeting.availability.scheduled = false
+      @meeting.availability.save!
+    end
+
+  end
+
+  def lawer_meetings
+    Meeting.all.select do |meeting|
+      meeting.availability.user = current_user
+    end
   end
 end
