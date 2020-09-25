@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :availabilities, dependent: :destroy
 
   # validations
-  validates :email, :company, presence: true
+  validates :email, :company,:name, presence: true
   validates :email, uniqueness: true
   validates :email, format: { with: /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/,
     message: "Only valid email" }
