@@ -1,0 +1,20 @@
+                <%= link_to "Edit profile", edit_user_registration_path, class: 'link' do %>
+                  <i class="far fa-address-card"></i>
+                <% end %>
+                <%= link_to "Change password", edit_user_registration_path, class: 'link' do %>
+                  <i class="fas fa-lock"></i>
+                <% end %>
+                <%= link_to "Logout", destroy_user_session_path(@session), method: :delete, do %>
+                  <i class="fas fa-sign-out-alt"></i>
+                <% end %>
+
+
+                <%= link_to "Edit profile", edit_user_registration_path, class: 'link' do %>
+                  <i class="far fa-address-card"></i>
+                <% end %>
+                <%= link_to "Change password", edit_user_registration_path, class: 'link' do %>
+                  <i class="fas fa-lock"></i>
+                <% end %>
+                <%= link_to "Logout", destroy_user_session_path(@session), method: :delete, do %>
+                  <i class="fas fa-sign-out-alt"></i>
+                <% end %>
