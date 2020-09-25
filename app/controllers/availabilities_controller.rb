@@ -2,7 +2,7 @@ class AvailabilitiesController < ApplicationController
   before_action :set_availability, only: [:show, :destroy]
 
   def index
-    @availabilities = Availability.all
+    @availabilities = Availability.where(scheduled: false).order(date: :asc, time: :asc)
   end
 
   def show

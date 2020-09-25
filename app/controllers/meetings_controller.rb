@@ -6,10 +6,9 @@ class MeetingsController < ApplicationController
     #
     @meetings_manager = current_user.meetings
     @meetings_lawyer = lawer_meetings
-    @meetings = @meetings_manager + @meetings_lawyer
+    @meetings = @meetings_manager & @meetings_lawyer
+    @meetings = @meetings.sort { |a, b| [a.availability.date, a.availability.time] <=> [b.availability.date, b.availability.time] }
   end
-
-
 
   def show
 
