@@ -19,7 +19,14 @@
               <% end %>
             </li>
           </ul>
-          <p><%= link_to "Set-up Meeting", { action: 'new', controller: 'meetings', availability_id: availability }, class: "a-card"  %></p>
+          <p>
+            <% if availability.user != current_user %>
+                <%= link_to "Set-up Meeting", { action: 'new', controller: 'meetings', availability_id: availability }, class: "a-card"  %>
+             <% else %>
+                <p class="a-card">Availability is yours</p>
+             <% end %>
+
+          </p>
         </div>
       </div>
     <% end %>

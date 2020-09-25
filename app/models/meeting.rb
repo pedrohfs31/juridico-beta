@@ -5,7 +5,7 @@ class Meeting < ApplicationRecord
   validates  :subject, :availability, presence: true
 
   after_save :scheduled_true
-  after_destroy :scheduled_false
+  # after_destroy :scheduled_false
 
   private
 
@@ -14,14 +14,14 @@ class Meeting < ApplicationRecord
     self.availability.save!
   end
 
-  def scheduled_false
+  # def scheduled_false
 
-    if current_user == self.availability.user
-      self.availability.destroy
-    else
-      self.availability.scheduled = false
-      self.availability.save!
-    end
+  #   if current_user == self.availability.user
+  #     self.availability.destroy
+  #   else
+  #     self.availability.scheduled = false
+  #     self.availability.save!
+  #   end
 
-  end
+  # end
 end
