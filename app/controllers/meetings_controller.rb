@@ -2,6 +2,7 @@ class MeetingsController < ApplicationController
   before_action :set_meeting, only: [:show, :destroy]
 
   def index
+    @meetings = Meeting.all
   end
   def show
 

@@ -1,0 +1,11 @@
+<br>
+<div class="d-flex justify-content-center text-center">
+  <div class="cards">
+    <% @meetings.where(user_id: false).each do |meeting|  %>
+      <div class="card" style="width: 15rem;">
+        <p> <%= meeting.subject %> </p>
+      </div>
+  </div>
+    <% end %>
+</div>
+
