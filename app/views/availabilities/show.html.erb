@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<!-- https://www.w3schools.com/css/css_navbar.asp -->
-<nav>
-=======
 <!-- <nav>
 >>>>>>> 0bdf53bc9ac174f56982215835e5e69c97cf78a4
   <ul>
@@ -38,10 +34,6 @@
             <p class="card-text"><%= @availability.time.strftime('%k:%M') %></p>
             <p class="card-text">20 minutes long</p>
             <p class="card-text"><%= @availability.user.email %></p>
-<<<<<<< HEAD
-            <p class="card-text"><%= link_to "Delete", availability_path(@availability), method: :delete  %></p>
-            <p><%= link_to "Schedule Meeting", { action: 'new', controller: 'meetings', availability_id: @availability }, class: "a-card"  %></p>
-=======
             <ul class="icons-inline">
               <li>
                 <%= link_to availability_path(@availability), method: :delete, data: { confirm: 'Are you sure?' }, class: 'user' do %>
@@ -50,7 +42,6 @@
               </li>
             </ul>
             <p><%= link_to "Set-up Meeting", { action: 'new', controller: 'meetings', availability_id: @availability }, class: "a-card"  %></p>
->>>>>>> 0bdf53bc9ac174f56982215835e5e69c97cf78a4
           </div>
         </div>
       </div>
@@ -58,29 +49,4 @@
  </div>
 </div>
 
-<<<<<<< HEAD
-<footer>
-  <ul>
-    <li>
-      <i class="fas fa-globe-americas"></i>
-    </li>
-    <li>
-      <i class="fab fa-twitter-square"></i>
-    </li>
-    <li>
-      <i class="fab fa-youtube-square"></i>
-    </li>
-    <li>
-      <i class="fab fa-facebook-square"></i>
-    </li>
-    <li>
-      <i class="fab fa-flickr"></i>
-    </li>
-  </ul>
-</footer>
-=======
-
 <%#= link_to "Availabilities" , availabilities_path %>
-
-
->>>>>>> 0bdf53bc9ac174f56982215835e5e69c97cf78a4
