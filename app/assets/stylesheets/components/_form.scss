@@ -1,0 +1,58 @@
+$dark-color: #41444b;
+$med-color: #52575d;
+$happy-color: #fddb3a;
+$neutral-color: #f6f4e6;
+
+.form-inputs {
+  width: 35%;
+  line-height: 120%;
+  text-align: left;
+  margin-top: 50px;
+  margin: auto;
+  border-radius: 5px;
+  background-color: $neutral-color;
+  padding: 10px 20px 0px 20px;
+}
+
+label {
+  display: inline-block;
+  margin: 0;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 5px;
+  margin: 0;
+  display: inline-block;
+  border: 1px solid $med-color;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: $happy-color;
+  font-size: 18px;
+  color: $dark-color;
+  padding: 14px 5px;
+  margin: 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-actions {
+  width: 35%;
+  margin: auto;
+  text-align: center;
+  border-radius: 5px;
+  background-color: $neutral-color;
+  padding: 0px 20px;
+}
+
+input[type=submit]:hover {
+  font-size: 20px;
+  font-style: bold;
+  color: $happy-color;
+  background-color: $dark-color;
+}
