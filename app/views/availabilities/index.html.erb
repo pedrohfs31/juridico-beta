@@ -3,7 +3,7 @@
 <div class="d-flex justify-content-center text-center">
 
   <div class="cart-container">
-  <%= simple_form_for "cart-items" do |f| %>
+  <%= simple_form_for "cart-items", url: url_for(action: 'create', controller: 'meetings'), :method => 'post' do |f| %>
       <div id="cart-header" class="hide">
           <div class="d-flex justify-content-between">
             <h4>Review your meetings</h4>

@@ -17,35 +17,25 @@ class MeetingsController < ApplicationController
   end
 
   def create
-    @meeting.user = current_user
-    if @meeting.availability.user == @meeting.user
-      render alert: 'This is your own avaliability, choose another.'
-    else
-      @successes = 0
-      @failures = {}
-      @meeting_keys = params.keys.select { |k| k.match(/meeting\w+/) }
-      @meeting_keys.each_with_index do |key, i|
-        begin
-          meeting = Meeting.new(meeting_params(key))
-          meeting.user = current_user
-          meeting.save ? @successes += 1 : @failures[i + 1] = [key]
-        rescue ActiveRecord::RecordInvalid => invalid
-          @failures[i + 1] << invalid.record.errors
-        end
+    # if @meeting.availability.user == @meeting.user
+    #   render alert: 'This is your own avaliability, choose another.'
+    # else
+    # end
+    @failures = {}
+    @meeting_keys = params.keys.select { |k| k.match(/meeting\w+/) }
+    @meeting_keys.each_with_index do |key, i|
+      begin
+        meeting = Meeting.new(meeting_params(key))
+        meeting.user = current_user
+        meeting.save!
+      rescue ActiveRecord::RecordInvalid => invalid
+        @failures[i + 1] = invalid.message
+        flash.now[:alert] = "Meeting ##{i + 1} was not sheduled because: #{invalid.message}."
+        render partial: "shared/flashes"
+        return
       end
-
-      if @successes == @meeting_keys.size
-        # redirect_to meeting_path(@meeting), notice: 'meeting was successfully created.'
-        # redirect_to controller: 'availabilities', action: 'destroy', id: @meeting.availability
-        # redirect_to :controller=> 'availabilities', :action=> 'destroy', :id=> @meeting.availability
-        render :index, notice: 'Meetings were successfully created.'
-      else
-        @failures.keys.each do |key|
-          render notice: "Meeting ##{key} failed do to #{@failures[key][1]}."
-        end
-      end
+      redirect_to meetings_path, notice: 'Meetings were successfully created.'
     end
-    # redirect_to :controller=>'availabilities', :action=>'destroy', :id => @meeting.availability
   end
 
   def destroy
