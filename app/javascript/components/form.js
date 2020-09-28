@@ -9,12 +9,12 @@ const cartCloseButton = document.querySelector(".closebtn");
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 const closeCart = () => {
   document.getElementById("cart-container").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
+  document.getElementById("main").style.marginRight = "0";
 };
 
 const openCart = () => {
   document.getElementById("cart-container").style.width = "350px";
-  document.getElementById("main").style.marginLeft = "350px";
+  document.getElementById("main").style.marginRight = "350px";
 };
 
 const initHideCartItems = () => {

@@ -90,7 +90,7 @@ input[type=submit]:hover {
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
-  left: 0;
+  right: 0;
   background-color: #111; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
@@ -123,7 +123,7 @@ input[type=submit]:hover {
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-  transition: margin-left .5s;
+  transition: margin-right .5s;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the cart-container (less padding and a smaller font size) */
