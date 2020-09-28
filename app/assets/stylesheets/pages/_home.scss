@@ -27,17 +27,17 @@ $neutral-color: #f6f4e6;
     blink-caret .75s step-end infinite;
 }
 
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 38% }
-}
+// /* The typing effect */
+// @keyframes typing {
+//   from { width: 0 }
+//   to { width: 38% }
+// }
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: $happy-color; }
-}
+// /* The typewriter cursor effect */
+// @keyframes blink-caret {
+//   from, to { border-color: transparent }
+//   50% { border-color: $happy-color; }
+// }
 
 // button-home {
 //   width: 15vw;
