@@ -21,7 +21,7 @@
               </li>
             </ul>
             <% if @availability.user != current_user %>
-              <p><%= link_to "Set-up Meeting", { action: 'new', controller: 'meetings', availability_id: @availability }, class: "a-card"  %></p>
+              <p><%= link_to "Set-up Meeting", { action: 'single_meeting', controller: 'meetings', availability_id: @availability }, method: :get ,class: "a-card"  %></p>
             <% else %>
               <p class="without-hover">Availability is yours</p>
             <% end %>

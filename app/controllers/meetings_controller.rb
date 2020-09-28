@@ -46,7 +46,11 @@ class MeetingsController < ApplicationController
     end
   end
 
-   def destroy
+  def single_meeting
+    @meeting = Meeting.new
+  end
+
+  def destroy
 
     @meeting = Meeting.find(params[:id])
     # session[:email] = @meeting.availability.user.email
