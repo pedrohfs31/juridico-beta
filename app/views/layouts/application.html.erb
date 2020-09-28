@@ -49,8 +49,8 @@
     </nav>
 
     <main>
-      <%= render 'layouts/messages' %>
       <%= yield %>
+      <%= render 'shared/flashes' %>
       <div class="spacer-main-footer">
       </div>
     </main>
