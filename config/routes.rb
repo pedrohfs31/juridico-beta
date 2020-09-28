@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get 'canceled', on: :collection, controller: "meetings", action: "index"
     end
   get 'canceled', to: 'pages#canceled'
+  get 'single', to: 'meetings#single_meeting'
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
