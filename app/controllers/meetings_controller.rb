@@ -36,13 +36,13 @@ class MeetingsController < ApplicationController
       end
     end
     if @failures.size > 0
-      flash[:alert] = @failures
+      flash[:save_errors] = @failures
       respond_to do |format|
         format.js { render nothing: true }
       end
       return
     else
-      redirect_to meetings_path, notice: 'Meetings were successfully created.'
+      redirect_to meetings_path, notice: 'Your meetings were successfully created.'
     end
   end
 
