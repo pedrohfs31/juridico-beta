@@ -7,56 +7,52 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
     <nav>
-      <ul>
-        <li>
-          <!-- <i class="fas fa-gavel"></i> -->
-          <!-- <i class="fas fa-calendar-check" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"></i> -->
-          <i class="fas fa-gavel" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"></i>
-          <%= link_to "Jurídico 1.0", root_path, class: "a-nav"  %>
-        </li>
-        <li>
-            <%= link_to "Home", root_path, class: "a-nav"  %>
-        </li>
-        <li>
-            <%= link_to "My availabilities", availabilities_path, class: "a-nav"  %>
-        </li>
-        <li>
-            <%= link_to "My meetings", meetings_path, class: "a-nav"  %>
-        </li>
-        <li>
-            <%#= link_to "Help", root_path, class: "a-nav"  %>
-        </li>
+      <div class="navbar-left">
+        <ul>
+          <li>
+            <i class="fas fa-gavel"></i>
+            <%= link_to "Jurídico 1.0", root_path, class: "a-nav"  %>
+          </li>
+          <li>
+              <%= link_to "Home", root_path, class: "a-nav"  %>
+          </li>
+          <li>
+              <%= link_to "Availabilities", availabilities_path, class: "a-nav"  %>
+          </li>
+          <li>
+              <%= link_to "My meetings", meetings_path, class: "a-nav"  %>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-right">
         <% if user_signed_in? %>
-          <li id="right-align">
-            <div class="dropdown">
-              <span><%= current_user.email %></span>
-              <div class="dropdown-content">
-                <%= link_to "Edit profile", edit_user_registration_path %>
-                <%= link_to "Change password", edit_user_registration_path %>
-                <%= link_to "Logout", destroy_user_session_path(@session), method: :delete %>
-              </div>
+          <div class="dropdown">
+            <button class="dropbtn">
+              <%= current_user.email %>
+              <i class="fa fa-caret-down"></i>
+            <div class="dropdown-content">
+              <%= link_to "Edit profile", edit_user_registration_path %>
+              <%= link_to "Change password", edit_user_registration_path %>
+              <%= link_to "Logout", destroy_user_session_path(@session), method: :delete %>
             </div>
-          </li>
+          </div>
           <% else %>
-          <li id="right-align">
-            <%= link_to "Login", new_user_session_path %>
-          </li>
-          <li id="right-align">
-            <%= link_to "Sign up", new_user_registration_path %>
-          </li>
+          <%= link_to "Login", new_user_session_path %>
+          <%= link_to "Sign up", new_user_registration_path %>
         <% end %>
-      </ul>
+      </div>
     </nav>
 
     <main>
       <%= render 'layouts/messages' %>
       <%= yield %>
+      <div class="spacer-main-footer">
+      </div>
     </main>
 
     <footer>
@@ -87,9 +83,6 @@
           <%= link_to "https://www.flickr.com/photos/advocaciageraldauniao/", target: "_blank", class: 'link' do %>
             <i class="fab fa-flickr"></i>
           <% end %>
-        </li>
-        <li>
-
         </li>
       </ul>
     </footer>

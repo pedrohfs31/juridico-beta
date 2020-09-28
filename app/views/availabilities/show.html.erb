@@ -1,29 +1,41 @@
 
 <br>
 <div class="main">
-  <div class="class="container mt-5 pt-5">
+  <div class="container">
     <div class="w-50 mx-auto py-3 px-4 border">
       <div class="d-flex justify-content-center text-center">
-        <div class="card" style="width: 100%;">
+        <div class="card-show">
           <div class="card-body">
             <h3 class="card-title">Avaliability</h3>
             <h5 class="card-title"><%= @availability.date.strftime("%a, %B %d %Y") %></h5>
-            <p class="card-text"><%= @availability.time.strftime('%k:%M') %></p>
-            <p class="card-text">20 minutes long</p>
-            <p class="card-text"><%= @availability.user.email %></p>
+            <p class="card-text">Start time: <%= @availability.time.strftime('%k:%M %P') %></p>
+            <p class="card-text">Duration: 20 minutes long</p>
+            <p class="card-text">Lawyer: <%= @availability.user.name %></p>
             <ul class="icons-inline">
               <li>
-                <%= link_to availability_path(@availability), method: :delete, data: { confirm: 'Are you sure?' }, class: 'user' do %>
-                   <i class="fa fa-trash-alt"></i>
+                <% if @availability.user == current_user %>
+                  <%= link_to availability_path(@availability), method: :delete, data: { confirm: 'Are you sure?' }, class: 'user' do %>
+                     <i class="fa fa-trash-alt"></i>
+                  <% end %>
                 <% end %>
               </li>
             </ul>
-            <p><%= link_to "Set-up Meeting", { action: 'new', controller: 'meetings', availability_id: @availability }, class: "a-card"  %></p>
+            <% if @availability.user != current_user %>
+              <p><%= link_to "Set-up Meeting", { action: 'new', controller: 'meetings', availability_id: @availability }, class: "a-card"  %></p>
+            <% else %>
+              <p class="without-hover">Availability is yours</p>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
- </div>
+  <div class="class="container mt-5 pt-5">
+    <div class="w-50 mx-auto py-1 px-4">
+      <div class="w-50 card-complement">
+        <%= link_to "Back", :back %>
+      </div>
+    </div>
+  </div>
 </div>
 
 <%#= link_to "Availabilities" , availabilities_path %>

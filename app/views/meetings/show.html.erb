@@ -1,32 +1,27 @@
-
-
 <br>
 <div class="main">
-  <div class="class="container mt-5 pt-5">
+  <div class="container mt-0 pt-0">
     <div class="w-50 mx-auto py-3 px-4 border">
       <div class="d-flex justify-content-center text-center">
-        <div class="card" style="width: 100%;">
+        <div class="card-show">
           <div class="card-body">
-            <h3 class="card-title">Reunião Confirmada</h3>
+            <h3 class="card-title">Meeting confirmed</h3>
             <h5 class="card-title"><%= @meeting.availability.date.strftime("%a, %B %d %Y") %></h5>
-            <p class="card-text"><%= @meeting.availability.time.strftime('%k:%M') %></p>
-            <p class="card-text"><%= @meeting.subject %></p>
-            <p class="card-text">20 minutos de duração</p>
-            <p class="card-text">O link de acesso foi enviado ao seu e-mail</p>
+            <p class="card-text">Start time: <%= @meeting.availability.time.strftime('%k:%M %P') %></p>
+            <p class="card-text">Subject: <%= @meeting.subject %></p>
+            <p class="card-text">Duration: 20 minutes</p>
+            <p class="card-text">Lawyer: <%= @meeting.availability_id %></p>
+            <p class="card-text"><%= link_to "Link for Video Call", "https://whereby.com/juridico-1.0", target: :"blank" %></p>
             <ul class="icons-inline">
               <li>
-                <%= link_to  root_path do %>
-                   <i class="fas fa-home"></i>
-                   <p> <%= link_to "voltar à home", root_path %> </p>
+                <%= link_to root_path do %>
+                  <i class="fas fa-home"></i>
                 <% end %>
               </li>
             </ul>
-
           </div>
         </div>
       </div>
     </div>
  </div>
 </div>
-
-<%= link_to "voltar à home", root_path %>
