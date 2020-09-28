@@ -10,7 +10,7 @@
             <p class="card-text">Start time: <%= @meeting.availability.time.strftime('%k:%M %P') %></p>
             <p class="card-text">Subject: <%= @meeting.subject %></p>
             <p class="card-text">Duration: 20 minutes</p>
-            <p class="card-text">Lawyer: <%= @meeting.availability_id %></p>
+            <p class="card-text">Lawyer: <%= @meeting.availability.user.name %></p>
             <p class="card-text"><%= link_to "Link for Video Call", "https://whereby.com/juridico-1.0", target: :"blank" %></p>
             <ul class="icons-inline">
               <li>
