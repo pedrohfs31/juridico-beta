@@ -4,13 +4,7 @@
 <div class="css-typing text-center">
   <h2 class="line-1 text-center">We connect Managers & Lawyers</h2>
 </div>
-<div id="box">
-  <div id=flip>
-    <div><div>FASTER</div></div>
-    <div><div>SAFER</div></div>
-    <div><div>EASIER</div></div>
-  </div>
-</div>
+
 
 <div class="main">
   <div class="container mt-5 pt-5">
@@ -23,8 +17,9 @@
               <ul class="icons-inline">
                 <li class="p-a-card-home">
                   <%= link_to availabilities_path, method: :get, class: "a-card-home" do %>
-                    <i class="fas fa-calendar-check"> I'm a Manager
-                    <br>Set-up a Meeting </i>
+                    <i class="fas fa-calendar-check"></i>
+                    <p> I'm a Manager </p>
+                    <p> Set-Up a Meeting </p>
                   <% end %>
                 </li>
               </ul>
@@ -36,8 +31,9 @@
               <ul class="icons-inline">
                 <li class="p-a-card-home">
                   <%= link_to new_availability_path, class: "a-card-home" do %>
-                    <p><i class="fas fa-calendar-check"> I'm a Lawyer
-                    Create Avaliability </i></p>
+                    <i class="fas fa-calendar-check"></i>
+                    <p> I'm a Lawyer </p>
+                    <p> Create Avaliability </p>
                   <% end %>
                 </li>
               </ul>

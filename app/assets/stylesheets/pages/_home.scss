@@ -13,6 +13,8 @@ $neutral-color: #f6f4e6;
 }
 
 .css-typing h2 {
+  font-size: 35px;
+  color:  $med-color;
   font-family: 'Roboto', sans-serif;
   padding: 0;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -37,69 +39,69 @@ $neutral-color: #f6f4e6;
   50% { border-color: $happy-color; }
 }
 
-button-home {
-  width: 15vw;
-  margin: 10px 50px;
-}
+// button-home {
+//   width: 15vw;
+//   margin: 10px 50px;
+// }
 
-#box {
-  font-family:'Roboto';
-  text-align:center;
-  color:#999;
-  text-transform: uppercase;
-  font-size:29px;
-  font-weight:bold;
-  padding-top:200px;
-  position:fixed;
-  width:100%;
-  bottom:62%;
-  display:block;
-  z-index: -1;
-}
+// #box {
+//   font-family:'Roboto';
+//   text-align:center;
+//   color:#999;
+//   text-transform: uppercase;
+//   font-size:29px;
+//   font-weight:bold;
+//   padding-top:200px;
+//   position:fixed;
+//   width:100%;
+//   bottom:62%;
+//   display:block;
+//   z-index: -1;
+// }
 
-#flip {
-  height:50px;
-  overflow:hidden;
-  padding-right: 33px;
-}
+// #flip {
+//   height:50px;
+//   overflow:hidden;
+//   padding-right: 33px;
+// }
 
-#flip > div > div {
-  color:$neutral-color;
-  padding:0px 14px;
-  height:50px;
-  margin-bottom:39px;
-  display:inline-block;
-}
+// #flip > div > div {
+//   color:$neutral-color;
+//   padding:0px 14px;
+//   height:50px;
+//   margin-bottom:39px;
+//   display:inline-block;
+// }
 
-#flip div:first-child {
-  animation: show 5s linear infinite;
-}
+// #flip div:first-child {
+//   animation: show 5s linear infinite;
+// }
 
-#flip div div {
-  background: $dark-color;
-  color: $neutral-color;
-  margin-bottom:45px;
-}
-#flip div:first-child div {
-  background: $happy-color;
-  color: $med-color;
-  margin-bottom:45px;
-}
-#flip div:last-child div {
-  background: $med-color;
-  color: $happy-color;
-}
+// #flip div div {
+//   background: $dark-color;
+//   color: $neutral-color;
+//   margin-bottom:45px;
+// }
+// #flip div:first-child div {
+//   background: $happy-color;
+//   color: $med-color;
+//   margin-bottom:45px;
+// }
+// #flip div:last-child div {
+//   background: $med-color;
+//   color: $happy-color;
+// }
 
-@keyframes show {
-  0% {margin-top:-270px;}
-  5% {margin-top:-180px;}
-  33% {margin-top:-180px;}
-  38% {margin-top:-90px;}
-  66% {margin-top:-90px;}
-  71% {margin-top:0px;}
-  99.99% {margin-top:0px;}
-  100% {margin-top:-270px;}
-}
+// @keyframes show {
+//   0% {margin-top:-270px;}
+//   5% {margin-top:-180px;}
+//   33% {margin-top:-180px;}
+//   38% {margin-top:-90px;}
+//   66% {margin-top:-90px;}
+//   71% {margin-top:0px;}
+//   99.99% {margin-top:0px;}
+//   100% {margin-top:-270px;}
+// }
 
 // https://css-tricks.com/block-links-are-a-pain-and-maybe-just-a-bad-idea/
 .card-home .icons-inline .p-a-card-home .a-card-home::after {
@@ -124,6 +126,7 @@ button-home {
   text-decoration: none;
   border-radius: 4px;
   border: 2px solid $dark-color;
+  vertical-align: middle;
 }
 
 // .card-title-home {
@@ -136,9 +139,15 @@ button-home {
 
 .card-home:hover {
   background-color: $happy-color;
+  color: $dark-color;
   transition-delay: 250ms;
   transition: 800ms;
   transform: scale(1.1, 1.1);
+}
+
+.card-home:hover p{
+  color: $dark-color;
+
 }
 
 .a-card-home i {
@@ -151,16 +160,51 @@ button-home {
   // text-decoration: none;
   // border-radius: 4px;
   // border: 2px solid $dark-color;
+
 }
+.a-card-home p{
+  font-family: 'Roboto', sans-serif;
+  // line-height: 30px;
+  color: $neutral-color;
+
+  // background-color: $happy-color;
+  font-size: 18px;
+  // padding: 10px 10px;
+  // text-decoration: none;
+  // border-radius: 4px;
+  // border: 2px solid $dark-color;
+}
+
+// .a-card {
+//   line-height: 30px;
+//   color: $dark-color;
+//   background-color: $happy-color;
+//   font-size: 16px;
+//   padding: 10px 10px;
+//   text-decoration: none;
+//   border-radius: 4px;
+//   border: 2px solid $dark-color;
+// }
+
 
 .a-card-home:hover {
   text-decoration: none;
   color: $dark-color;
 }
 
-.p-a-card-home {
-  margin-top: 15px;
+.a-card-home:hover i {
+  text-decoration: none;
+  color: $dark-color;
 }
+
+.p-a-card-home li {
+  margin-top: 15px;
+ }
+
+ .icons-inline li{
+    text-align: center;
+
+ }
 
 // p {
 //   position:fixed;
