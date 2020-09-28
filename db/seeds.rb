@@ -39,7 +39,7 @@ puts "Creating Users ..."
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   User.create!(
-    email: "#{first_name}@#{last_name}.com",
+    email: Faker::Internet.email,
     name: "#{first_name} #{last_name}",
     password: "123456",
     company: ["Ministério da Eco", "AGU", "UNB"].sample
@@ -50,7 +50,7 @@ puts "Creating availabilities ...."
 100.times do
   Availability.create!(
     date: rand(1..7).day.from_now,
-    time: times.sample,
+    time: times.values.sample(1)[0],
     # time: Time.at(rand * Time.now.to_i),
     user_id: rand_id(User),
     scheduled: false
