@@ -20,6 +20,10 @@ nav {
   list-style-type: none;
 }
 
+nav ul {
+  margin: 0;
+}
+
 .navbar-left ul li i {
   color: $neutral-color;
   font-size: $font-size-nav;
@@ -135,4 +139,8 @@ nav {
   background-color: $med-color;
   transition-delay: 200ms;
   transition: 250ms;
+}
+
+.dropbtn {
+  margin: 0;
 }
