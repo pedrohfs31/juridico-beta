@@ -1,0 +1,36 @@
+const cartItems = document.querySelectorAll(".cart-item");
+const selectedDates = document.querySelector(".selected-dates");
+const setUpMeetingButtons = document.querySelectorAll(".a-card");
+const cartHeader = document.querySelector("#cart-header");
+
+const initRemoveElement = () => {
+  const removalLinks = document.querySelectorAll(".remove-selected-date");
+  removalLinks.forEach((element) => {
+    element.addEventListener("click", (event) => {
+      event.preventDefault();
+      element.parentNode.parentNode.remove();
+      if (document.querySelectorAll(".remove-selected-date").length === 0) { cartHeader.classList.add("hide"); }
+      setUpMeetingButtons.forEach((linkTag) => {
+        if (linkTag.search.slice(17) == element.parentElement.parentElement.querySelector(".availability-id").value) {
+          linkTag.parentElement.parentElement.parentElement.classList.remove("hide");
+        }
+      });
+    });
+  });
+ 
+};
+
+const insertCartItems = () => {
+  selectedDates.innerHTML = "";
+  cartItems.forEach((item, i) => {
+    <%# debugger %>
+    if (<%= @failures.keys %>.includes(i))
+    selectedDates.insertAdjacentHTML("beforeend", item.outerHTML);
+  });
+  <% @failures.keys.each do |key| %>
+    alert("<%= escape_javascript(@failures[key]) %>");
+  <% end %>
+  initRemoveElement();
+};
+
+insertCartItems();

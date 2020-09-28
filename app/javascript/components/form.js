@@ -1,6 +1,10 @@
 // target class: a-card 
 const setUpMeetingButtons = document.querySelectorAll(".a-card");
 const cartHeader = document.querySelector("#cart-header");
+const selectedDates = document.querySelector(".selected-dates");
+// const cartSubmitButton = document.getElementById("cart-submit");
+
+
 
 const initRemoveElement = () => {
   const removalLinks = document.querySelectorAll(".remove-selected-date");
@@ -24,7 +28,6 @@ const initInsertItemtoCart = () => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
 
-      const selectedDates = document.querySelector(".selected-dates");
       if (selectedDates.innerText === "") { cartHeader.classList.remove("hide"); }
       fetch(`meetings/new/${event.target.search}`)
         .then(response => response.text())
@@ -36,6 +39,24 @@ const initInsertItemtoCart = () => {
     });
   });
 };
+
+// const initUrlParams = () => {
+//   new URLSearchParams(window.location.search);
+//   return urlParams.get('js') === "true"
+// };
+
+// const initCopyCartItems = () => {
+//   cartSubmitButton.addEventListener("click", (event) => {
+//     return document.querySelectorAll(".cart-item");
+//   });
+// };
+
+// const insertCartItems = (cartItems) => {
+//   cartItems.forEach((item) => {
+//     selectedDates.insertAdjacentHTML("beforeend", item.outerHTML);
+//   });
+//   initRemoveElement();
+// };
 
 
 export { initInsertItemtoCart }

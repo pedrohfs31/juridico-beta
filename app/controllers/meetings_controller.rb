@@ -29,11 +29,16 @@ class MeetingsController < ApplicationController
         meeting.user = current_user
         meeting.save!
       rescue ActiveRecord::RecordInvalid => invalid
-        @failures[i + 1] = invalid.message
-        flash.now[:alert] = "Meeting ##{i + 1} was not sheduled because: #{invalid.message}."
-        render partial: "shared/flashes"
-        return
+        @failures[i] = "Meeting (#{meeting.availability.date.strftime("%A, %d %b %Y")}, at #{meeting.availability.time.strftime('%k:%M')}) was not sheduled because: #{invalid.message}."
       end
+    end
+    if @failures.size > 0
+      flash[:alert] = @failures
+      respond_to do |format|
+        format.js { render nothing: true, locals: { alert: @failures } }
+      end
+      return
+    else
       redirect_to meetings_path, notice: 'Meetings were successfully created.'
     end
   end

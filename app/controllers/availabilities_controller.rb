@@ -24,8 +24,6 @@ class AvailabilitiesController < ApplicationController
       end
     end
     @availability = Availability.new
-
-    # @times =
   end
 
   def create

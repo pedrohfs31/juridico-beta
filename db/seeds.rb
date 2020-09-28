@@ -11,7 +11,21 @@ require 'faker'
 
 User.destroy_all
 Availability.destroy_all
-times = ["08:00", "08:20", "08:40", "09:00", "09:20", "09:40", "10:00", "10:20", "10:40", "11:00", "11:20", "11:40", "12:00", "12:20", "12:40"]
+# times = ["08:00", "08:20", "08:40", "09:00", "09:20", "09:40", "10:00", "10:20", "10:40", "11:00", "11:20", "11:40", "12:00", "12:20", "12:40"]
+times = {}
+puts "Creating time schedules ..."
+(8..17).to_a.each do |hour|
+  (1..3).to_a.each do |period|
+    case period
+    when 1
+      times["#{hour}.#{period}".to_f] = "#{sprintf("%02d", hour)}:00"
+    when 2
+      times["#{hour}.#{period}".to_f] = "#{sprintf("%02d", hour)}:20"
+    else
+      times["#{hour}.#{period}".to_f] = "#{sprintf("%02d", hour)}:40"
+    end
+  end
+end
 
 puts "Creating Users ..."
 10.times do
@@ -21,6 +35,7 @@ puts "Creating Users ..."
     company: ["Ministério da Eco", "AGU", "UNB"].sample
   )
 end
+
 puts "Creating availabilities ...."
 100.times do
   Availability.create(
