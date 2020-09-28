@@ -13,30 +13,37 @@ class MeetingsController < ApplicationController
   end
 
   def show
-
   end
+
   def new
-    @meeting = Meeting.new
+    render partial: "meetings/new", locals: { availability_id: params[:availability_id] }
   end
 
   def create
-    @meeting = Meeting.new(meeting_params)
-
-    @meeting.user = current_user
-    if @meeting.availability.user == @meeting.user
-      redirect_to :root, alert: 'This time is yours'
-    else
-      if @meeting.save
-        # redirect_to meeting_path(@meeting), notice: 'meeting was successfully created.'
-        # redirect_to controller: 'availabilities', action: 'destroy', id: @meeting.availability
-        # redirect_to :controller=> 'availabilities', :action=> 'destroy', :id=> @meeting.availability
-        render :show, notice: 'meeting was successfully created.'
-
-      else
-        render :new
+    # if @meeting.availability.user == @meeting.user
+    #   render alert: 'This is your own avaliability, choose another.'
+    # else
+    # end
+    @failures = {}
+    @meeting_keys = params.keys.select { |k| k.match(/meeting\w+/) }
+    @meeting_keys.each_with_index do |key, i|
+      begin
+        meeting = Meeting.new(meeting_params(key))
+        meeting.user = current_user
+        meeting.save!
+      rescue ActiveRecord::RecordInvalid => invalid
+        @failures[i] = "Meeting (#{meeting.availability.date.strftime("%A, %d %b %Y")}, at #{meeting.availability.time.strftime('%k:%M')}) was not sheduled because: #{invalid.message}."
       end
     end
-    # redirect_to :controller=>'availabilities', :action=>'destroy', :id => @meeting.availability
+    if @failures.size > 0
+      flash[:alert] = @failures
+      respond_to do |format|
+        format.js { render nothing: true }
+      end
+      return
+    else
+      redirect_to meetings_path, notice: 'Meetings were successfully created.'
+    end
   end
 
    def destroy
@@ -60,8 +67,8 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.find(params[:id])
   end
 
-  def meeting_params
-    params.require(:meeting).permit(:subject, :availability_id)
+  def meeting_params(key)
+    params.require(key).permit(:subject, :availability_id)
   end
 
 

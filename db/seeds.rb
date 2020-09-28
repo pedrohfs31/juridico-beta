@@ -9,25 +9,61 @@
 
 require 'faker'
 
+# METHODS
+def rand_id(model_class)
+  rand( model_class.first.id..model_class.last.id )
+end
+
+puts "Cleaning the DB"
 User.destroy_all
 Availability.destroy_all
-times = ["08:00", "08:20", "08:40", "09:00", "09:20", "09:40", "10:00", "10:20", "10:40", "11:00", "11:20", "11:40", "12:00", "12:20", "12:40"]
+Meeting.destroy_all
+
+times = {}
+puts "Creating time schedules ..."
+(8..17).to_a.each do |hour|
+  (1..3).to_a.each do |period|
+    case period
+    when 1
+      times["#{hour}.#{period}".to_f] = "#{sprintf("%02d", hour)}:00"
+    when 2
+      times["#{hour}.#{period}".to_f] = "#{sprintf("%02d", hour)}:20"
+    else
+      times["#{hour}.#{period}".to_f] = "#{sprintf("%02d", hour)}:40"
+    end
+  end
+end
 
 puts "Creating Users ..."
 10.times do
-  User.create(
-    email: Faker::Internet.email,
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+  User.create!(
+    email: "#{first_name}@#{last_name}.com",
+    name: "#{first_name} #{last_name}",
     password: "123456",
     company: ["Ministério da Eco", "AGU", "UNB"].sample
   )
 end
+
 puts "Creating availabilities ...."
 100.times do
-  Availability.create(
-    date: Date.today+rand(30),
+  Availability.create!(
+    date: rand(1..7).day.from_now,
     time: times.sample,
     # time: Time.at(rand * Time.now.to_i),
-    user_id: rand(1..10),
+    user_id: rand_id(User),
     scheduled: false
+  )
+end
+
+puts "Creating Meetings"
+100.times do
+  user_id = rand_id(User)
+  availability_id = rand_id(Availability)
+  Meeting.create!(
+    user_id: user_id,
+    availability_id: availability_id,
+    subject: 'impeachment'
   )
 end

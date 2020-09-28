@@ -11,80 +11,88 @@
   </head>
 
   <body>
-    <nav>
-      <div class="navbar-left">
-        <ul>
-          <li>
-            <i class="fas fa-gavel"></i>
-            <%= link_to "Jurídico 1.0", root_path, class: "a-nav"  %>
-          </li>
-          <li>
-              <%= link_to "Home", root_path, class: "a-nav"  %>
-          </li>
-          <li>
-              <%= link_to "Availabilities", availabilities_path, class: "a-nav"  %>
-          </li>
-          <li>
-              <%= link_to "My meetings", meetings_path, class: "a-nav"  %>
-          </li>
-        </ul>
-      </div>
-      <div class="navbar-right">
-        <% if user_signed_in? %>
-          <div class="dropdown">
-            <button class="dropbtn">
-              <%= current_user.email %>
-              <i class="fa fa-caret-down"></i>
-            <div class="dropdown-content">
-              <%= link_to "Edit profile", edit_user_registration_path %>
-              <%= link_to "Change password", edit_user_registration_path %>
-              <%= link_to "Logout", destroy_user_session_path(@session), method: :delete %>
+    <div id="main">
+      <nav>
+        <div class="navbar-left">
+          <ul>
+            <li>
+              <i class="fas fa-gavel"></i>
+              <%= link_to "Jurídico 1.0", root_path, class: "a-nav"  %>
+            </li>
+            <li>
+                <%= link_to "Home", root_path, class: "a-nav"  %>
+            </li>
+            <li>
+                <%= link_to "Availabilities", availabilities_path, class: "a-nav", method: :get  %>
+            </li>
+            <li>
+                <%= link_to "My meetings", meetings_path, class: "a-nav"  %>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-right">
+          <% if user_signed_in? %>
+            <div class="dropdown">
+              <button class="dropbtn">
+                <%= current_user.email %>
+                <i class="fa fa-caret-down"></i>
+              <div class="dropdown-content">
+                <%= link_to "Edit profile", edit_user_registration_path %>
+                <%= link_to "Change password", edit_user_registration_path %>
+                <%= link_to "Logout", destroy_user_session_path(@session), method: :delete %>
+              </div>
             </div>
-          </div>
-          <% else %>
-          <%= link_to "Login", new_user_session_path %>
-          <%= link_to "Sign up", new_user_registration_path %>
-        <% end %>
-      </div>
-    </nav>
+            <% else %>
+            <%= link_to "Login", new_user_session_path %>
+            <%= link_to "Sign up", new_user_registration_path %>
+          <% end %>
+        </div>
+      </nav>
 
-    <main>
-      <%= yield %>
-      <%= render 'shared/flashes' %>
-      <div class="spacer-main-footer">
-      </div>
-    </main>
+      <main>
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+        <div class="spacer-main-footer">
+        </div>
+      </main>
 
-    <footer>
-      <ul>
-        <h6><strong>Advocacia-Geral da União</strong></h6>
-        <p>Setor de Autarquias Sul - Quadra 3 - Lote 5/6, Ed. Multi Brasil Corporate - Brasília-DF - CEP 70.070-030 - Phone numbers: (61) 2026-9202 e 2026-9712</p>
-        <li>
-          <%= link_to "https://www.gov.br/agu/pt-br", target: "_blank", class: 'link' do %>
-            <i class="fas fa-globe-americas"></i>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "https://twitter.com/AdvocaciaGeral", target: "_blank", class: 'link' do %>
-            <i class="fab fa-twitter-square"></i>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "https://www.youtube.com/user/AguBrasil", target: "_blank", class: 'link' do %>
-            <i class="fab fa-youtube-square"></i>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "https://pt-br.facebook.com/agubrasil/", target: "_blank", class: 'link' do %>
-            <i class="fab fa-facebook-square"></i>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "https://www.flickr.com/photos/advocaciageraldauniao/", target: "_blank", class: 'link' do %>
-            <i class="fab fa-flickr"></i>
-          <% end %>
-        </li>
-      </ul>
-    </footer>
+      <div id="flash">
+          <%= render 'shared/flashes' %>
+      </div>
+
+      <div id="footer">
+        <footer>
+          <ul>
+            <h6><strong>Advocacia-Geral da União</strong></h6>
+            <p>Setor de Autarquias Sul - Quadra 3 - Lote 5/6, Ed. Multi Brasil Corporate - Brasília-DF - CEP 70.070-030 - Phone numbers: (61) 2026-9202 e 2026-9712</p>
+            <li>
+              <%= link_to "https://www.gov.br/agu/pt-br", target: "_blank", class: 'link' do %>
+                <i class="fas fa-globe-americas"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "https://twitter.com/AdvocaciaGeral", target: "_blank", class: 'link' do %>
+                <i class="fab fa-twitter-square"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "https://www.youtube.com/user/AguBrasil", target: "_blank", class: 'link' do %>
+                <i class="fab fa-youtube-square"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "https://pt-br.facebook.com/agubrasil/", target: "_blank", class: 'link' do %>
+                <i class="fab fa-facebook-square"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "https://www.flickr.com/photos/advocaciageraldauniao/", target: "_blank", class: 'link' do %>
+                <i class="fab fa-flickr"></i>
+              <% end %>
+            </li>
+          </ul>
+        </footer>
+      </div>
+    </div>
   </body>
 </html>

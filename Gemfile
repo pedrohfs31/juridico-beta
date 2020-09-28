@@ -32,8 +32,8 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'faker'
+gem 'turbolinks_render'
 
-gem 'faker'
 # Devise : seesions
 gem 'devise'
 
