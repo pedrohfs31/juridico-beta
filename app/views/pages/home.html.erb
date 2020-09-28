@@ -19,11 +19,12 @@
         <div class="cards">
           <div class="card-home">
             <div class="card-body-home">
-              <h5 class="card-title"> I'm a Manager </h5>
+<!--               <h4 class="card-title"> I'm a Manager </h4> -->
               <ul class="icons-inline">
                 <li class="p-a-card-home">
-                  <%= link_to availabilities_path, class: "a-card-home" do %>
-                    <i class="fas fa-calendar-check"> Set-up a Meeting </i>
+                  <%= link_to availabilities_path, method: :get, class: "a-card-home" do %>
+                    <i class="fas fa-calendar-check"> I'm a Manager
+                    <br>Set-up a Meeting </i>
                   <% end %>
                 </li>
               </ul>
@@ -31,11 +32,12 @@
           </div>
           <div class="card-home">
             <div class="card-body-home">
-              <h5 class="card-title"> I'm a Lawyer </h5>
+              <!-- <h4 class="card-title-home"> I'm a Lawyer </h4> -->
               <ul class="icons-inline">
                 <li class="p-a-card-home">
                   <%= link_to new_availability_path, class: "a-card-home" do %>
-                    <p><i class="fas fa-calendar-check"> Create Avaliability </i></p>
+                    <p><i class="fas fa-calendar-check"> I'm a Lawyer
+                    Create Avaliability </i></p>
                   <% end %>
                 </li>
               </ul>

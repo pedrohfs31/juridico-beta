@@ -1,3 +1,6 @@
+        <%= render 'layouts/messages' %>
+
+
             <div class="card-home">
               <div class="card-body-home">
                 <h5 class="card-title"> I'm a Manager </h5>
