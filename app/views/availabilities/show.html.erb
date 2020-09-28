@@ -20,14 +20,22 @@
                 <% end %>
               </li>
             </ul>
-            <% if @availability.user != current_user %>
-              <p><%= link_to "Set-up Meeting", { action: 'single_meeting', controller: 'meetings', availability_id: @availability }, method: :get ,class: "a-card"  %></p>
-            <% else %>
-              <p class="without-hover">Availability is yours</p>
-            <% end %>
-            <%= link_to :back do %>
-                <i class="fas fa-undo", style = "color: #41444B;"></i>
-            <% end %>
+            <ul class="icons-inline">
+              <li>
+                <% if @availability.user != current_user %>
+                    <p><%= link_to "Set-up Meeting", { action: 'single_meeting', controller: 'meetings', availability_id: @availability }, method: :get ,class: "a-card"  %></p>
+                <% else %>
+                    <p class="without-hover">Availability is yours</p>
+                <% end %>
+              </li>
+            </ul>
+            <ul class="icons-inline">
+              <li>
+                <%= link_to :back do %>
+                  <i class="fas fa-undo"></i>
+                <% end %>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
