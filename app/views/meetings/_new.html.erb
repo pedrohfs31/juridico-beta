@@ -1,6 +1,6 @@
 <div class="cart-item">
-  <div class="item-info d-flex justify-content-between">
-    <h6><%= "#{Availability.find(params[:availability_id]).time.strftime('%k:%M %P')} - #{Availability.find(params[:availability_id]).date.strftime("%A, %d %b %Y")}" %></h6>
+  <div class="item-info">
+    <h6><%= "#{Availability.find(params[:availability_id]).time.strftime('%k:%M')} - #{Availability.find(params[:availability_id]).date.strftime("%A, %d %b %Y")}" %></h6>
     <%= link_to "#", class: 'remove-selected-date' do %>
       <i class="fa fa-trash-alt"></i>
     <% end %>

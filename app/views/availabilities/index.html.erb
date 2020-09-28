@@ -7,11 +7,12 @@
   <div class="cart-container" id="cart-container">
   <%= simple_form_for "cart-items", url: url_for(action: 'create', controller: 'meetings'), :method => 'post', format: :js, remote: true do |f| %>
       <div id="cart-header" class="hide">
-        <a href="javascript:void(0)" class="closebtn">&times;</a>
-        <div class="d-flex justify-content-between">
-          <h4>Review your meetings</h4>
+        <div class="d-flex justify-content-between align-items-center mb-4">
           <%= f.button :submit, class: 'btn btn-primary', value: "Set-up meeting(s)", id: "cart-submit", data: { disable_with: "Processsing..." } %>
+          <a href="javascript:void(0)" class="closebtn">&times;</a>
         </div>
+        <h4>Review your meetings</h4>
+        <hr class="header-line">
       </div>
       <div class="selected-dates"></div>
     <% end %>

@@ -13,6 +13,7 @@ nav {
   background-color: $dark-color;
   margin: 0;
   padding: 12px 0px;
+  justify-content: space-between;
 }
 
 .navbar-left ul li {
@@ -50,8 +51,8 @@ nav ul {
 }
 
 .navbar-right {
-  position: absolute;
-  right: 0px;
+  // position: absolute;
+  // right: 0px;
   color: $neutral-color;
   font-size: $font-size-nav;
   text-align: center;
