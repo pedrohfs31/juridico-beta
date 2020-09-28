@@ -38,7 +38,7 @@ class MeetingsController < ApplicationController
     if @failures.size > 0
       flash[:alert] = @failures
       respond_to do |format|
-        format.js { render nothing: true, locals: { alert: @failures } }
+        format.js { render nothing: true }
       end
       return
     else

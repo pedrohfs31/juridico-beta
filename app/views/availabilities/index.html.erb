@@ -8,7 +8,7 @@
       <div id="cart-header" class="hide">
           <div class="d-flex justify-content-between">
             <h4>Review your meetings</h4>
-            <%= f.button :submit, class: 'btn btn-primary', value: "Set-up meetings", id: "cart-submit" %>
+            <%= f.button :submit, class: 'btn btn-primary', value: "Set-up meetings", id: "cart-submit", data: { disable_with: "Processsing..." } %>
           </div>
       </div>
       <div class="selected-dates"></div>

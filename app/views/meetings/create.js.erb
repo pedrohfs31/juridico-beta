@@ -27,6 +27,8 @@ const insertCartItems = () => {
     if (<%= @failures.keys %>.includes(i))
     selectedDates.insertAdjacentHTML("beforeend", item.outerHTML);
   });
+  <%# debugger %>
+  document.getElementById("flash").insertAdjacentHTML("beforeend", "<%= escape_javascript(render partial: 'shared/flashes') %>");
   <% @failures.keys.each do |key| %>
     alert("<%= escape_javascript(@failures[key]) %>");
   <% end %>
