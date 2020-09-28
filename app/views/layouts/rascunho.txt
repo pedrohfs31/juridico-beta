@@ -1,3 +1,41 @@
+        <%= render 'layouts/messages' %>
+
+
+            <div class="card-home">
+              <div class="card-body-home">
+                <h5 class="card-title"> I'm a Manager </h5>
+                <ul class="icons-inline">
+                  <li class="p-a-card-home">
+                    <%= link_to availabilities_path, class: "a-card-home" do %>
+                      <i class="fas fa-calendar-check"> Set-up a Meeting </i>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-home">
+              <div class="card-body-home">
+                <h5 class="card-title"> I'm a Lawyer </h5>
+                <ul class="icons-inline">
+                  <li class="p-a-card-home">
+                    <%= link_to new_availability_path, class: "a-card-home" do %>
+                      <p><i class="fas fa-calendar-check"> Create Avaliability </i></p>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          <button type="button">I'm a Manager
+          Set-up a Meeting</button>
+
+
+
+
+
+
+
+
                 <%= link_to "Edit profile", edit_user_registration_path, class: 'link' do %>
                   <i class="far fa-address-card"></i>
                 <% end %>
@@ -70,3 +108,42 @@
 </div>
 
 <%#= link_to "Availabilities" , availabilities_path %>
+
+
+Home original:
+
+<div class="main">
+  <div class="container mt-5 pt-5">
+    <div class="w-50 mx-auto py-3 px-4">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="cards">
+            <div class="card" style="width: 15rem;">
+              <div class="card-body home">
+                <h5 class="card-title"> Create Availability </h5>
+                <ul class="icons-inline">
+                  <li>
+                    <%= link_to new_availability_path do %>
+                      <i class="fas fa-calendar-check"> Create</i>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card" style="width: 15rem;">
+              <div class="card-body home">
+                <h5 class="card-title"> Set-up a Meeting </h5>
+                <ul class="icons-inline">
+                  <li>
+                    <%= link_to availabilities_path do %>
+                      <i class="fas fa-calendar-check"> Set-up</i>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
