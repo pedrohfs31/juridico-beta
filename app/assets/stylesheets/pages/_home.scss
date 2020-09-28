@@ -5,7 +5,6 @@ $dark-color: #41444b;
 $med-color: #52575d;
 $happy-color: #fddb3a;
 $neutral-color: #f6f4e6;
-$home-font: "Roboto", "Helvetica", "sans-serif";
 // https://css-tricks.com/snippets/css/typewriter-effect/
 
 .css-typing h2 {
@@ -24,7 +23,7 @@ $home-font: "Roboto", "Helvetica", "sans-serif";
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 100% }
+  to { width: 70% }
 }
 
 /* The typewriter cursor effect */
@@ -33,18 +32,19 @@ $home-font: "Roboto", "Helvetica", "sans-serif";
   50% { border-color: $happy-color; }
 }
 
-#container {
+#box {
   font-family:'Roboto';
   text-align:center;
   color:#999;
   text-transform: uppercase;
-  font-size:36px;
+  font-size:29px;
   font-weight:bold;
   padding-top:200px;
   position:fixed;
   width:100%;
   bottom:62%;
   display:block;
+  z-index: -1;
 }
 
 #flip {
@@ -67,10 +67,12 @@ $home-font: "Roboto", "Helvetica", "sans-serif";
 #flip div div {
   background: $dark-color;
   color: $neutral-color;
+  margin-bottom:45px;
 }
 #flip div:first-child div {
   background: $happy-color;
   color: $med-color;
+  margin-bottom:45px;
 }
 #flip div:last-child div {
   background: $med-color;
@@ -88,14 +90,56 @@ $home-font: "Roboto", "Helvetica", "sans-serif";
   100% {margin-top:-270px;}
 }
 
-p {
-  position:fixed;
-  width:100%;
-  bottom:30px;
-  font-size:12px;
-  color:#999;
-  margin-top:200px;
+// https://css-tricks.com/block-links-are-a-pain-and-maybe-just-a-bad-idea/
+.icons-inline p a-card-home::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
+
+.card-home {
+  position: relative;
+}
+
+.card-home:hover {
+  background-color: $happy-color;
+  transition-delay: 250ms;
+  transition: 800ms;
+  transform: scale(1.1, 1.1);
+}
+
+.a-card-home {
+  line-height: 30px;
+  color: $dark-color;
+  background-color: $happy-color;
+  font-size: 16px;
+  padding: 10px 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 2px solid $dark-color;
+}
+
+.a-card-home:hover {
+  text-decoration: none;
+  color: $neutral-color;
+  background-color: $dark-color;
+}
+
+.p-a-card-home {
+  margin-top: 15px;
+}
+
+// p {
+//   position:fixed;
+//   width:100%;
+//   bottom:30px;
+//   font-size:12px;
+//   color:#999;
+//   margin-top:200px;
+// }
 
 
 // =============================================

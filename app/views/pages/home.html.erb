@@ -13,13 +13,49 @@ Jurídico 1.0
   <h2 class="line-1 text-center">We connect Managers & Lawyers</h2>
   <h2></h2>
 </div>
-<div id=container>
+<div id="box">
   <div id=flip>
     <div><div>FASTER</div></div>
     <div><div>SAFER</div></div>
     <div><div>EASIER</div></div>
   </div>
 </div>
+
+<div class="main">
+  <div class="container mt-5 pt-5">
+    <div class="w-50 mx-auto py-3 px-4">
+      <div class="d-flex justify-content-around">
+        <div class="cards">
+            <div class="card-home" style="width: 25rem;">
+              <div class="card-body-home">
+                <h5 class="card-title"> I'm a Manager </h5>
+                <ul class="icons-inline">
+                  <li class="p-a-card-home">
+                    <%= link_to availabilities_path, class: "a-card-home" do %>
+                      <i class="fas fa-calendar-check"> Set-up a Meeting </i>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card" style="width: 25rem;">
+              <div class="card-body-home">
+                <h5 class="card-title"> I'm a Lawyer </h5>
+                <ul class="icons-inline">
+                  <li class="p-a-card-home">
+                    <%= link_to new_availability_path, class: "a-card-home" do %>
+                      <p><i class="fas fa-calendar-check"> Create Avaliability </i></p>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- Typewriter em duas linhas
 <div class="boxes d-flex justify-content-center text-center">
