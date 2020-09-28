@@ -1,6 +1,95 @@
+$dark-color: #41444b;
+$med-color: #52575d;
+$happy-color: #fddb3a;
+$neutral-color: #f6f4e6;
+
 .alert {
   position: fixed;
   bottom: 16px;
   right: 16px;
-  z-index: 1000;
+  z-index: 0;
 }
+
+/*flash*/
+
+.alert-danger {
+    vertical-align: middle;
+    animation-name: stretch-danger;
+    animation-duration: 1.0s;
+//  https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_animation-timing-function2
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+@keyframes stretch-danger {
+    0% {
+        transform: scale(0.99);
+        background-color: #ff9966;
+    }
+
+    100% {
+        transform: scale(1.01);
+//      https://www.color-hex.com/color-palette/23357
+        background-color: #cc3300;
+        color: #000000;
+    }
+}
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+}
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: $dark-color;
+    text-align: left;
+}
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: $dark-color;
+    text-align: left;
+
+}
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+// .alert-notice {
+//     line-height: 1;
+//     background-color: $neutral-color;
+//     border-color: #99cc33;
+//     color: $dark-color;
+//     text-align: left;
+//     animation-name: stretch-notice;
+//     animation-duration: 1.0s;
+// //  https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_animation-timing-function2
+//     animation-timing-function: ease-out;
+//     animation-direction: alternate;
+//     animation-iteration-count: 2;
+//     animation-play-state: running;
+// }
+// @keyframes stretch-notice {
+//     0% {
+//         transform: scale(0.99);
+//         background-color: #99cc33;
+//     }
+
+//     100% {
+//         transform: scale(1.01);
+// //      https://www.color-hex.com/color-palette/23357
+//         background-color: #339900;
+//         color: #000000;
+//     }
+// }
+
+

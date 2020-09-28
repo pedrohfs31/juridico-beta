@@ -4,9 +4,12 @@ class MeetingsController < ApplicationController
   def index
     # @meetings = current_user.meetings
     #
-    @meetings_manager = current_user.meetings
-    @meetings_lawyer = lawer_meetings
-    @meetings = @meetings_manager + @meetings_lawyer
+
+    @meetings_current_user = current_user.meetings
+    @meetings_lawyer = lawyer_meetings
+
+    @meetings = (@meetings_current_user + @meetings_lawyer).uniq
+    @meetings = @meetings.sort { |a, b| [a.availability.date, a.availability.time] <=> [b.availability.date, b.availability.time] }
   end
 
   def show
@@ -43,14 +46,19 @@ class MeetingsController < ApplicationController
     end
   end
 
-  def destroy
+   def destroy
+
     @meeting = Meeting.find(params[:id])
+    # session[:email] = @meeting.availability.user.email
+    # @email = @meeting.availability.user.email
     # @availability = @meeting.availability
     @meeting.destroy
 
     # redirect_to availability_path(@availability)
-    scheduled_false
-    redirect_to meetings_path
+    @email = scheduled_false
+    # redirect_to meetings_path
+    redirect_to canceled_path(email: @email)
+    # redirect_to root_path(email: @email)
   end
 
   private
@@ -68,16 +76,20 @@ class MeetingsController < ApplicationController
 
     if current_user == @meeting.availability.user
       @meeting.availability.destroy
+
+      return session[:email] = @meeting.user.email
     else
       @meeting.availability.scheduled = false
       @meeting.availability.save!
+      return session[:email] = @meeting.availability.user.email
     end
 
   end
 
-  def lawer_meetings
+  def lawyer_meetings
     Meeting.all.select do |meeting|
-      meeting.availability.user = current_user
+      meeting.availability.user == current_user
+
     end
   end
 end

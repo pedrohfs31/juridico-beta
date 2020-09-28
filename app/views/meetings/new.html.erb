@@ -1,0 +1,15 @@
+<br>
+<%= simple_form_for @meeting do |f| %>
+  <div class="form-inputs">
+    <h3>New meeting</h3>
+    <%= f.input :subject %>
+    <%#= f.input :availability_id, as: :hidden, value: params[:availability_id]  %>
+    <%= f.input :availability_id, as: :hidden, input_html: {value: params[:availability_id], include_hidden: true}  %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
+<% end %>
+<div class="form-complement">
+  <%= link_to "Back", :back %>
+</div>
