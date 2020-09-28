@@ -18,12 +18,14 @@
             <p class="card-text"><%= link_to "Link for Video Call", "https://whereby.com/juridico-1.0", target: :"blank" %></p>
             <ul class="icons-inline">
               <li>
+                <%= link_to :back do %>
+                  <i class="fas fa-undo"></i>
+                <% end %>
+              </li>
+              <li>
                 <%= link_to root_path do %>
                   <i class="fas fa-home"></i>
-                <% end %>
 
-                <%= link_to :back do %>
-                  <i class="fas fa-undo", style = "color: #41444B;"></i>
                 <% end %>
               </li>
             </ul>

@@ -136,3 +136,11 @@ ul {
   transition-delay: 250ms;
   transition: 400ms;
 }
+i.fas.fa-undo{
+  color: med-color;
+}
+i.fas.fa-undo :hover {
+  color: $neutral-color;
+  font-size: 15px;
+  background-color: $dark-color;
+}
