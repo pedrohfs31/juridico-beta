@@ -1,1 +1,193 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap');
+
+$dark-color: #41444b;
+$med-color: #52575d;
+$happy-color: #fddb3a;
+$neutral-color: #f6f4e6;
+$home-font: "Roboto", "Helvetica", "sans-serif";
+// https://css-tricks.com/snippets/css/typewriter-effect/
+
+.css-typing h2 {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid $happy-color; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: $happy-color; }
+}
+
+#container {
+  font-family:'Roboto';
+  text-align:center;
+  color:#999;
+  text-transform: uppercase;
+  font-size:36px;
+  font-weight:bold;
+  padding-top:200px;
+  position:fixed;
+  width:100%;
+  bottom:62%;
+  display:block;
+}
+
+#flip {
+  height:50px;
+  overflow:hidden;
+}
+
+#flip > div > div {
+  color:$neutral-color;
+  padding:0px 14px;
+  height:50px;
+  margin-bottom:39px;
+  display:inline-block;
+}
+
+#flip div:first-child {
+  animation: show 5s linear infinite;
+}
+
+#flip div div {
+  background: $dark-color;
+  color: $neutral-color;
+}
+#flip div:first-child div {
+  background: $happy-color;
+  color: $med-color;
+}
+#flip div:last-child div {
+  background: $med-color;
+  color: $happy-color;
+}
+
+@keyframes show {
+  0% {margin-top:-270px;}
+  5% {margin-top:-180px;}
+  33% {margin-top:-180px;}
+  38% {margin-top:-90px;}
+  66% {margin-top:-90px;}
+  71% {margin-top:0px;}
+  99.99% {margin-top:0px;}
+  100% {margin-top:-270px;}
+}
+
+p {
+  position:fixed;
+  width:100%;
+  bottom:30px;
+  font-size:12px;
+  color:#999;
+  margin-top:200px;
+}
+
+
+// =============================================
+// Typewriter em suas linhas
+
+// @keyframes type {
+//   0% {
+//     width: 0;
+//   }
+//   99.9% {
+//     border-right: .15em solid $happy-color;
+//   }
+//   100% {
+//     border: none;
+//   }
+// }
+
+// @-webkit-keyframes type {
+//   0% {
+//     width: 0;
+//   }
+//   99.9% {
+//     border-right: .15em solid $happy-color;
+//   }
+//   100% {
+//     border: none;
+//   }
+// }
+
+// @keyframes type2 {
+//   0% {
+//     width: 0;
+//   }
+//   1% {
+//     opacity: 1;
+//   }
+//   99.9% {
+//     border-right: .15em solid $happy-color;
+//   }
+//   100% {
+//     opacity: 1;
+//     border: none;
+//   }
+// }
+
+// @-webkit-keyframes type2 {
+//   0% {
+//     width: 0;
+//   }
+//   1% {
+//     opacity: 1;
+//   }
+//   99.9% {
+//     border-right: .15em solid $happy-color;
+//   }
+//   100% {
+//     opacity: 1;
+//     border: none;
+//   }
+// }
+
+// @keyframes type3 {
+//   0% {
+//     width: 0;
+//   }
+//   1% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+// @-webkit-keyframes type3 {
+//   0% {
+//     width: 0;
+//   }
+//   1% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+// @keyframes blink {
+//   50% {
+//     border-color: transparent;
+//   }
+// }
+// @-webkit-keyframes blink {
+//   50% {
+//     border-color: tranparent;
+//   }
+// }
