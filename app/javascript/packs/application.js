@@ -27,10 +27,11 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { initInsertItemtoCart, initCopyCartItems, insertCartItems, initUrlParams } from '../components/form';
+import { initInsertItemtoCart, initHideCartItems } from '../components/form';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initInsertItemtoCart();
+  initHideCartItems();
 });

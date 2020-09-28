@@ -6,7 +6,7 @@
     <% end %>
   </div>
   <%= simple_form_for "meeting#{params[:availability_id]}" do |f| %>
-    <%= f.input :subject, label: false, input_html: {placeholder: "Add meeting subject" }  %>
+    <%= f.input :subject, as: :text, label: false, input_html: {placeholder: "Add meeting subject" }  %>
     <%= f.input :availability_id, as: :hidden, input_html: {value: params[:availability_id], include_hidden: true, class: "availability-id"}  %>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <% end %>
