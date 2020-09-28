@@ -156,3 +156,17 @@ input[type=submit]:hover {
 .item-info {
   margin: 0 5px;
 }
+
+@media (max-width: 575px){
+  #cart-container {
+    width: 240px !important;
+  }
+  }
+  
+  // @media (max-width: 300px){
+  // .cart-container {
+  //   display: grid;
+  //   grid-template-columns: 1fr;
+  //   grid-gap: 15px;
+  // }
+  // }
